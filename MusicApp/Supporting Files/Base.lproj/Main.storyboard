@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="l8R-fl-g3S">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Search View Controller-->
+        <scene sceneID="Z4F-QJ-0yt">
+            <objects>
+                <viewController id="l8R-fl-g3S" customClass="SearchViewController" customModule="HalfTunes" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VaN-U5-mWI"/>
+                        <viewControllerLayoutGuide type="bottom" id="hSH-TE-lZV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zut-aA-Zet">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="68" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="cwH-iL-Bqg">
+                                <rect key="frame" x="0.0" y="76" width="375" height="591"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="gray" indentationWidth="10" reuseIdentifier="TrackCell" rowHeight="62" id="n2Y-w0-QmE" customClass="TrackCell" customModule="HalfTunes" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="22" width="375" height="62"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="n2Y-w0-QmE" id="1cM-Yx-ECi">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="61.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kEh-aw-rhS">
+                                                    <rect key="frame" x="14" y="29" width="251" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5qF-ac-rTV">
+                                                    <rect key="frame" x="14" y="8" width="251" height="20"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <progressView hidden="YES" opaque="NO" tag="40" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1hQ-8q-23R">
+                                                    <rect key="frame" x="14" y="52" width="251" height="2"/>
+                                                </progressView>
+                                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xnA-Mw-9Kn">
+                                                    <rect key="frame" x="319" y="9" width="48" height="30"/>
+                                                    <state key="normal" title="Cancel">
+                                                        <color key="titleColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="cancelTapped:" destination="n2Y-w0-QmE" eventType="touchUpInside" id="brn-b5-Mob"/>
+                                                    </connections>
+                                                </button>
+                                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="beE-Q6-Lym">
+                                                    <rect key="frame" x="269" y="9" width="42" height="30"/>
+                                                    <state key="normal" title="Pause">
+                                                        <color key="titleColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="pauseOrResumeTapped:" destination="n2Y-w0-QmE" eventType="touchUpInside" id="ah4-e9-Tj8"/>
+                                                    </connections>
+                                                </button>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100% of 1.35MB" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JxQ-dq-reV">
+                                                    <rect key="frame" x="282" y="44" width="84" height="14"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <color key="textColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Px7-vg-MWK">
+                                                    <rect key="frame" x="289" y="9" width="69" height="30"/>
+                                                    <state key="normal" title="Download">
+                                                        <color key="titleColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="downloadTapped:" destination="n2Y-w0-QmE" eventType="touchUpInside" id="nAh-hx-Bts"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="tintColor" red="0.98624604940000005" green="0.0071207880970000003" blue="0.027434188870000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="Px7-vg-MWK" firstAttribute="top" secondItem="1cM-Yx-ECi" secondAttribute="top" constant="9" id="1Km-5h-wz0"/>
+                                                <constraint firstItem="5qF-ac-rTV" firstAttribute="leading" secondItem="1cM-Yx-ECi" secondAttribute="leading" constant="14" id="3HV-AI-umi"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="1hQ-8q-23R" secondAttribute="trailing" constant="102" id="4Ee-ER-eRs"/>
+                                                <constraint firstItem="1hQ-8q-23R" firstAttribute="top" secondItem="kEh-aw-rhS" secondAttribute="bottom" constant="6" id="Bhi-kv-5Hy"/>
+                                                <constraint firstAttribute="trailing" secondItem="JxQ-dq-reV" secondAttribute="trailing" constant="9" id="NWw-4w-SWR"/>
+                                                <constraint firstItem="1hQ-8q-23R" firstAttribute="centerY" secondItem="JxQ-dq-reV" secondAttribute="centerY" constant="2" id="Naa-Ow-Y4y"/>
+                                                <constraint firstItem="xnA-Mw-9Kn" firstAttribute="top" secondItem="1cM-Yx-ECi" secondAttribute="topMargin" constant="1" id="OJu-XN-b5H"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="5qF-ac-rTV" secondAttribute="trailing" constant="102" id="Oe8-WM-bL6"/>
+                                                <constraint firstItem="beE-Q6-Lym" firstAttribute="top" secondItem="1cM-Yx-ECi" secondAttribute="topMargin" constant="1" id="UtF-7v-zGU"/>
+                                                <constraint firstItem="5qF-ac-rTV" firstAttribute="top" secondItem="1cM-Yx-ECi" secondAttribute="top" constant="8" id="Znz-Yq-zKR"/>
+                                                <constraint firstItem="kEh-aw-rhS" firstAttribute="top" secondItem="5qF-ac-rTV" secondAttribute="bottom" constant="1" id="afW-bc-na6"/>
+                                                <constraint firstAttribute="trailing" secondItem="Px7-vg-MWK" secondAttribute="trailing" constant="17" id="av6-AG-lMY"/>
+                                                <constraint firstItem="xnA-Mw-9Kn" firstAttribute="leading" secondItem="beE-Q6-Lym" secondAttribute="trailing" constant="8" id="big-sY-qW2"/>
+                                                <constraint firstItem="kEh-aw-rhS" firstAttribute="leading" secondItem="1cM-Yx-ECi" secondAttribute="leading" constant="14" id="ktf-WN-9lr"/>
+                                                <constraint firstItem="xnA-Mw-9Kn" firstAttribute="centerY" secondItem="beE-Q6-Lym" secondAttribute="centerY" id="nBh-aR-Fzs"/>
+                                                <constraint firstAttribute="trailing" secondItem="xnA-Mw-9Kn" secondAttribute="trailing" constant="8" id="siW-b4-2OW"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="kEh-aw-rhS" secondAttribute="trailing" constant="102" id="vZE-kM-nft"/>
+                                                <constraint firstItem="1hQ-8q-23R" firstAttribute="leading" secondItem="1cM-Yx-ECi" secondAttribute="leading" constant="14" id="xeo-Un-6vR"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="artistLabel" destination="kEh-aw-rhS" id="olS-FR-PzO"/>
+                                            <outlet property="cancelButton" destination="xnA-Mw-9Kn" id="Gzx-rK-D2e"/>
+                                            <outlet property="downloadButton" destination="Px7-vg-MWK" id="eep-PE-IRu"/>
+                                            <outlet property="pauseButton" destination="beE-Q6-Lym" id="jjJ-R0-Lm9"/>
+                                            <outlet property="progressLabel" destination="JxQ-dq-reV" id="YV7-6Z-NJa"/>
+                                            <outlet property="progressView" destination="1hQ-8q-23R" id="PEO-Iu-mU7"/>
+                                            <outlet property="titleLabel" destination="5qF-ac-rTV" id="rje-Wu-fD2"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="l8R-fl-g3S" id="zti-5e-rvf"/>
+                                    <outlet property="delegate" destination="l8R-fl-g3S" id="Zpg-rc-Eg0"/>
+                                </connections>
+                            </tableView>
+                            <searchBar contentMode="redraw" searchBarStyle="prominent" text="" placeholder="Song name or artist" translatesAutoresizingMaskIntoConstraints="NO" id="zgz-Xb-mEr">
+                                <rect key="frame" x="0.0" y="20" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="l8R-fl-g3S" id="Akp-Oz-cS2"/>
+                                </connections>
+                            </searchBar>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="zgz-Xb-mEr" firstAttribute="leading" secondItem="zut-aA-Zet" secondAttribute="leading" id="2iU-wY-Lrk"/>
+                            <constraint firstItem="cwH-iL-Bqg" firstAttribute="top" secondItem="zgz-Xb-mEr" secondAttribute="bottom" id="Per-xq-MFC"/>
+                            <constraint firstAttribute="trailing" secondItem="zgz-Xb-mEr" secondAttribute="trailing" id="Utc-KF-3Xa"/>
+                            <constraint firstItem="hSH-TE-lZV" firstAttribute="top" secondItem="cwH-iL-Bqg" secondAttribute="bottom" id="j0f-1w-1OS"/>
+                            <constraint firstItem="cwH-iL-Bqg" firstAttribute="leading" secondItem="zut-aA-Zet" secondAttribute="leading" id="jNv-9g-TKw"/>
+                            <constraint firstAttribute="trailing" secondItem="cwH-iL-Bqg" secondAttribute="trailing" id="kwK-2E-gmw"/>
+                            <constraint firstItem="zgz-Xb-mEr" firstAttribute="top" secondItem="VaN-U5-mWI" secondAttribute="bottom" id="nE5-9q-anc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Yzl-iq-wBR"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="search" id="w5U-dn-LBU"/>
+                    <connections>
+                        <outlet property="searchBar" destination="zgz-Xb-mEr" id="mg7-Qk-Qyq"/>
+                        <outlet property="tableView" destination="cwH-iL-Bqg" id="KJ1-4s-qJy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VFc-FS-RsQ" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="774" y="-308"/>
+        </scene>
+    </scenes>
+</document>
